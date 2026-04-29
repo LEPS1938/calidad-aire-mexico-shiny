@@ -253,7 +253,7 @@ proyectoU3A_VG_NOMBRE/
 
 ## 11. Instalación y ejecución local
 1. Clonar el repositorio
-git clone [URL POR GENERAR]
+git clone https://github.com/LEPS1938/calidad-aire-mexico-shiny.git
 cd proyectoU3A_VG_LopezAntonio
 2. Crear entorno virtual
 python -m venv .venv
