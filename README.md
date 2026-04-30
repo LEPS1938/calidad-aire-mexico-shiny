@@ -1,7 +1,7 @@
 # ¿Dónde no conviene salir a correr?  
 ## Una historia visual sobre la calidad del aire en México
 
-**Autor:** Luis Antonio López Abaunza  
+**Autor:** Luis Antonio López Abaunza
 **Materia:** Visualización gráfica para IA  
 **Universidad:** Universidad Iberoamericana León  
 **Herramienta:** Shiny for Python  
@@ -98,7 +98,9 @@ Columnas relevantes:
 
 Este archivo se usó para ubicar las estaciones en el mapa y agregar contexto geográfico a las mediciones.
 
----
+### Exploración inicial
+
+El archivo `notebooks/exploracion_inicial.ipynb` documenta el análisis exploratorio inicial del dataset. En él se revisan la estructura de los archivos, valores faltantes, rango de fechas, valores extremos, estaciones disponibles y diferencias entre el catálogo de estaciones y las estaciones con datos diarios.
 
 ## 5. Proceso de limpieza y transformación
 
@@ -153,10 +155,10 @@ Esta decisión permite que el análisis sea transparente: los datos se conservan
 
 Después de ejecutar el script de limpieza, se generan los siguientes archivos en data/processed/:
 
-air_quality_clean.csv
-map_stations.csv
-monthly_pollution.csv
-weekday_pollution.csv
+air_quality_clean.csv: contiene el conjunto de datos limpio completo.
+map_stations.csv: contiene promedios por estación y se usa para el mapa interactivo.
+monthly_pollution.csv: contiene promedios mensuales por estación.
+weekday_pollution.csv: contiene promedios por día de la semana.
 
 air_quality_clean.csv
 Contiene el conjunto de datos limpio completo.
@@ -174,7 +176,7 @@ Contiene promedios por día de la semana. Se usa para comparar lunes, martes, mi
 
 La aplicación incluye tres visualizaciones interactivas.
 
-1. Mapa interactivo de estaciones
+### 1. Mapa interactivo de estaciones
 
 Pregunta que responde:
 ¿En qué zonas aparecen los valores más altos?
@@ -192,7 +194,7 @@ filtro por ciudad o zona de monitoreo,
 información al pasar el cursor sobre cada estación.
 
 
-2. Gráfica mensual
+### 2. Gráfica mensual
 
 Pregunta que responde:
 ¿Hay meses donde la contaminación sube?
@@ -208,7 +210,7 @@ cambia con el contaminante seleccionado,
 cambia con la ciudad o zona seleccionada.
 
 
-3. Gráfica por día de la semana
+### 3. Gráfica por día de la semana
 
 Pregunta que responde:
 ¿Hay días peores para salir a correr?
@@ -225,7 +227,7 @@ cambia con la ciudad o zona seleccionada.
 
 
 ## 10. Estructura del repositorio
-proyectoU3A_VG_NOMBRE/
+calidad-aire-mexico-shiny/
 │
 ├── app.py
 ├── requirements.txt
@@ -249,12 +251,15 @@ proyectoU3A_VG_NOMBRE/
 │   └── 01_clean_data.py
 │
 └── assets/
+│
+└── notebooks/
+    └── exploracion_inicial.ipynb
 
 
 ## 11. Instalación y ejecución local
 1. Clonar el repositorio
 git clone https://github.com/LEPS1938/calidad-aire-mexico-shiny.git
-cd proyectoU3A_VG_LopezAntonio
+cd calidad-aire-mexico-shiny
 2. Crear entorno virtual
 python -m venv .venv
 3. Activar entorno virtual
@@ -291,22 +296,21 @@ requirements.txt
 
 ## 13. Despliegue
 
-La aplicación será desplegada usando shinyapps.io.
+La aplicación fue desplegada usando shinyapps.io.
 
 Link de la aplicación publicada:
-
-[PEGAR AQUÍ EL LINK FINAL DE SHINY]
+https://testcito-visualizacion.shinyapps.io/correr-aire-mexico/
 
 
 ## 14. Limitaciones
 
 Este proyecto tiene algunas limitaciones importantes:
 
-El archivo horario original es muy pesado, por lo que la aplicación utiliza datos diarios.
-Algunas estaciones aparecen en el catálogo, pero no tienen registros diarios disponibles.
-La documentación general del dataset menciona 2010–2021, aunque el archivo diario contiene registros desde 2000.
-La limpieza por percentil 99.9 elimina valores extremos, pero no reemplaza una validación ambiental oficial.
-Los resultados deben interpretarse como análisis exploratorio, no como diagnóstico oficial de calidad del aire.
+- El archivo horario original es muy pesado, por lo que la aplicación utiliza datos diarios.
+- Algunas estaciones aparecen en el catálogo, pero no tienen registros diarios disponibles.
+- La documentación general del dataset menciona 2010–2021, aunque el archivo diario contiene registros desde 2000.
+- La limpieza por percentil 99.9 elimina valores extremos, pero no reemplaza una validación ambiental oficial.
+- Los resultados deben interpretarse como análisis exploratorio, no como diagnóstico oficial de calidad del aire.
 
 
 ## 15. Conclusión
